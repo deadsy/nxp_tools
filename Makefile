@@ -30,10 +30,8 @@ clean:
 
 .PHONY: test
 test:
-	#$(ELFTOSB) -f imx -c ./test/test.bd -o test.bin does_not_exist.elf
-	$(ELFTOSB) -f imx -c ./test/test.bd -o test.bin ./test/test.elf
-	#$(BLHOST) -v
-	#$(SDPHOST) -v
+	valgrind $(ELFTOSB) -f imx -c ./test/test.bd -o test.bin ./test/test.elf
+	#$(ELFTOSB) -f imx -c ./test/test.bd -o test.bin ./test/test.elf
 
 .PHONY: install
 install:

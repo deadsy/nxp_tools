@@ -1,7 +1,8 @@
 
 # The source block assign file name to identifiers
 sources {
- myBinFile = extern (0);
+ #myBinFile = extern (0);
+ elfFile = extern (0);
 }
 
 constants {
@@ -59,5 +60,5 @@ section (0) {
     enable flexspinor 0x3000;
     
     #5. Program image
-    load myBinFile > kAbsAddr_Ivt;
+    #load elfFile > kAbsAddr_Ivt;
 }
